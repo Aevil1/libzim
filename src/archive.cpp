@@ -251,6 +251,19 @@ namespace zim
     return r;
   }
 
+  Archive::IllustrationInfos Archive::getIllustrationInfos(uint32_t w,
+                                                           uint32_t h,
+                                                           float minScale) const
+  {
+    IllustrationInfos r;
+    for ( const auto& ii : getIllustrationInfos() ) {
+      if ( ii.width == w && ii.height == h && ii.scale >= minScale ) {
+        r.push_back(ii);
+      }
+    }
+    return r;
+  }
+
   bool Archive::hasIllustration(unsigned int size) const {
     try {
       getIllustrationItem(size);

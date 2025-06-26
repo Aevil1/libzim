@@ -205,6 +205,9 @@ TEST_F(ZimArchive, openCreatedArchive)
               {48, 48, 1.0, {}},
               {96, 96, 1.0, {}},
   }));
+  ASSERT_EQ(archive.getIllustrationInfos(48, 48, 1), zim::Archive::IllustrationInfos({
+              {48, 48, 1.0, {}},
+  }));
   ASSERT_TRUE(archive.hasMainEntry());
 
   ASSERT_EQ(archive.getMetadata("Title"), "This is a title");

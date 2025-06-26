@@ -379,6 +379,18 @@ namespace zim
        */
       IllustrationInfos getIllustrationInfos() const;
 
+      /** Return the list of illustations with the specified dimensions.
+       *
+       *  @param w width in CSS pixels
+       *  @param h height in CSS pixels
+       *  @param minScale lower limit on the devicePixelRatio value of the
+       *                  targeted display media. The result will include
+       *                  any entries with the scale value equal to or greater
+       *                  than this filter value.
+       * @return A vector of IllustrationInfo data.
+       */
+      IllustrationInfos getIllustrationInfos(uint32_t w, uint32_t h, float minScale) const;
+
 
       /** Get an entry using its "path" index.
        *
