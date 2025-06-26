@@ -225,8 +225,8 @@ namespace zim
     return ret;
   }
 
-  Archive::Illustrations Archive::getIllustrations() const {
-    Illustrations r;
+  Archive::IllustrationInfos Archive::getIllustrationInfos() const {
+    IllustrationInfos r;
     for(auto e = m_impl->findx('M', "Illustration_").second; ; ++e ) {
       try {
         const auto path = getEntryByPath(entry_index_type(e)).getPath();

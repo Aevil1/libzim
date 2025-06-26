@@ -102,7 +102,7 @@ namespace zim
     public:
       template<EntryOrder order> class EntryRange;
       template<EntryOrder order> class iterator;
-      typedef std::vector<IllustrationInfo> Illustrations;
+      typedef std::vector<IllustrationInfo> IllustrationInfos;
 
       /** Archive constructor.
        *
@@ -377,7 +377,7 @@ namespace zim
        *
        * @return A vector of IllustrationInfo data.
        */
-      Illustrations getIllustrations() const;
+      IllustrationInfos getIllustrationInfos() const;
 
 
       /** Get an entry using its "path" index.
