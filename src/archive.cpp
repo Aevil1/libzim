@@ -181,7 +181,10 @@ namespace zim
   }
 
   Item Archive::getIllustrationItem(unsigned int size) const {
-    return Archive::getIllustrationItem(IllustrationInfo{size, size, 1.0, {}});
+    // XXX: A square illustration of the requested size may exist with
+    // XXX: non-empty attributes or at a scale different from 1. Shouldn't
+    // XXX: we test for it too, if the {size}x{size}@1 one is not available?
+    return getIllustrationItem(IllustrationInfo{size, size, 1.0, {}});
   }
 
   Item Archive::getIllustrationItem(const IllustrationInfo& ii) const {
